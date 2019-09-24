@@ -1,0 +1,75 @@
+$main_color: #42a5f5;
+$sec_color: #194e91;
+
+$blue_bg: rgba(66, 165, 245, 0.15);
+$text_color: #194e91;
+
+$text_white: #fff;
+$text_black: #000;
+
+$bg_white: #fff;
+$bg_black: #000;
+
+$text_grey: #7996a6;
+$box_bg: #9b9b9b;
+$grey_bg: #f7f7f7;
+$footer_bg: #f1f1f1;
+$filter_border: #979797;
+$copyright_bg: #000000;
+$filter_text_color: #4a4a4a;
+$transition_time: .3s;
+
+$single_prop_form_bg: #febb00;
+$single_prop_form_text: $text_black;
+$single_prop_form_submit_btn: #5f97fb;
+
+
+@mixin transition_c($transition_time) {
+	transition: $transition_time;
+}
+
+@mixin transition() {
+	-webkit-transition: $transition_time;
+	-moz-transition: $transition_time;
+	transition: $transition_time;
+}
+@mixin transform($data) {
+	-webkit-transform: $data;
+	-ms-transform: $data;
+	transform: $data;
+}
+@mixin bg_cover {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+@mixin bg_cover_c($position) {
+	background-size: cover;
+	background-position: $position;
+	background-repeat: no-repeat;
+}
+@mixin absolute_center($width, $height){
+	width: $width;
+	height: $height;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -($height/2);
+	margin-left: -($width/2);
+}
+
+// fonts
+$regular:		"helveticaneue";
+$medium:		"helveticaneue-medium";
+$bold:			"helveticaneue-bold";
+$light:			"helveticaneue-light";
+$bold_i: 		"helveticaneue-bolditalic";
+$ultra_light:	"helveticaneue-ultralight";
+$ultra_light_i:	"helveticaneue-ultralightitalic";
+$cond_black:	"helveticaneue-condensedblack";
+$cond_bold:		"helveticaneue-condensedbold";
+$italic:		"helveticaneue-italic";
+$light_italic:	"helveticaneue-lightitalic";
+$medium_italic:	"helveticaneue-mediumitalic";
+$thin:			"helveticaneue-thin";
+$thin_italic:	"helveticaneue-thinitalic";
