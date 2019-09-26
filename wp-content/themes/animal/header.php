@@ -22,23 +22,31 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<div id="homepage_loader">
-	    <div id="homepage_loader">
-		    <div class="loading_centered_cont">
-		        <div class="loading_centered_cont_inner">
-       			<?php 
-       				echo do_shortcode('[bodymovin anim_id="10" loop="true" width="200px" align="center"]'); 
-   				?>
-		        </div>
-		    </div>
+	<?php  
+		if(is_page(8)){
+		?>
+		<div id="homepage_loader">
+		    <div id="homepage_loader">
+			    <div class="loading_centered_cont">
+			        <div class="loading_centered_cont_inner">
+	       			<?php 
+	       				echo do_shortcode('[bodymovin anim_id="10" loop="true" width="200px" align="center"]'); 
+	   				?>
+			        </div>
+			    </div>
+			</div>
 		</div>
-	</div>
+		<?php  
+		}
+	?>
 	<header class="site-header">
 		<div class="row align-items-center justify-content-center">
 			<div class="col-2 text-left">
-				<div class="logo">
-					<img class="img-fluid" src="<?php echo get_template_directory_uri()?>/inc/assets/images/logo.png">
-				</div>
+				<a href="<?php echo get_home_url(); ?>">
+					<div class="logo">
+						<img class="img-fluid" src="<?php echo get_template_directory_uri()?>/inc/assets/images/logo.png">
+					</div>
+				</a>
 			</div>
 			<div class="col-10 text-right">
 				<ul class="d-inline-flex">
@@ -49,7 +57,9 @@
 						Contact Us
 					</li>
 				</ul>
-				<div class="btn_web">Login</div>
+				<a href="<?php echo get_page_link(13) ;?>">
+					<div class="btn_web">Login</div>
+				</a>
 			</div>
 		</div>
 	</header>

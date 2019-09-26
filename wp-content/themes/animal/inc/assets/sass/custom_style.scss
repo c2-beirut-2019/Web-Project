@@ -221,6 +221,60 @@ body.hide_scroll{
 		margin-left: 20px;
 	}
 }
+
+.site-footer{
+	background-color: $main_color;
+	padding: 50px 0px;
+	.logo{
+		width: 50px;
+		height: 50px;
+	}
+	.head{
+		font-size: 18px;
+		font-family: $bold;
+		color: white;
+		margin-bottom: 20px;
+	}
+	li{
+		font-size: 18px;
+		font-family: $light;
+		ligne-height: normal;
+		color: white;
+		margin-bottom: 10px;
+	}
+	li:last-child{
+		margin-bottom: 0px;
+	}
+	.email{
+		color: #85c9ee;
+	    font-family: $regular;
+	    font-size: 14px;
+	    letter-spacing: .12px;
+	    margin: 0;
+	    padding: 0;
+	    width: 290px;
+	    height: 47px;
+	    border: 1px solid white;
+	    padding-left: 20px;
+	}
+	.blue_btn{
+		width: 155px;
+	    height: 47px;
+	    padding: 11px 0px;
+	    background-color: $main_color;
+	    color: white;
+	    font-family: $bold;
+	    font-size: 13px;
+	    letter-spacing: 1.08px;
+	    line-height: 20px;
+	    text-transform: uppercase;
+	    border: 2px solid white;
+	    transition: .2s;
+	    display: table;
+	    text-align: center;
+	}
+}
+
 .homepage{
 	.banner_section{
 		.backgroundimg{

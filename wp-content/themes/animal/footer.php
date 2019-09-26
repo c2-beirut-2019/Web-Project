@@ -1,22 +1,34 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WP_Bootstrap_Starter
- */
-
-?>
-<?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
-	</div><!-- #content -->
-    <?php get_template_part( 'footer-widget' ); ?>
-	<footer id="colophon" class="site-footer <?php echo wp_bootstrap_starter_bg_class(); ?>" role="contentinfo">
-		
+</div><!-- #content -->
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row align-items-start">
+				<div class="col-3">
+					<a href="<?php echo get_home_url(); ?>">
+						<div class="logo">
+							<img class="img-fluid" src="<?php echo get_template_directory_uri()?>/inc/assets/images/logo.png">
+						</div>
+					</a>
+				</div>
+				<div class="col-3">
+					<div class="head">COMPANY</div>
+					<ul>
+						<li><a href="<?php echo get_page_link(17) ;?>">About Us</a></li>
+						<li><a href="<?php echo get_page_link(15) ;?>">Contact Us</a></li>
+						<li><a href="<?php echo get_page_link(13) ;?>">Login</a></li>
+					</ul>
+				</div>
+				<div class="col-6">
+					<div class="head">SIGN UP TO THE NEWSLETTER</div>
+					<div class="d-inline-flex">
+						<input class="email" type="email" name="email" placeholder="Enter Your Email">
+						<button type="submit" class="blue_btn">
+							Subscribe
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</footer><!-- #colophon -->
-<?php endif; ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -1,18 +1,6 @@
-<?php get_header(); ?>
+<?php session_start();   get_header(); ?>
 <!-- http://34.247.71.103:4444/pet/toAdopt?page=1&limit=10 -->
 <!-- http://34.247.71.103:4444/client -->
-<div>
-	<div class="container">
-		<?php 
-			// $response = wp_remote_get( 'http://34.247.71.103:4444/pet/toAdopt?page=1&limit=1' );
-			// if ( is_array( $response ) ) {
-			// 	$body = $response['body']; // use the content
-			// 	$receive= var_dump(json_decode($body, true));	
-			// 	echo $receive->{'data'};
-			// }
-		?>
-	</div>
-</div>
 <div class="site-page">
 	<main>
 		<section class="homepage">
