@@ -174,13 +174,13 @@ function wp_bootstrap_starter_scripts() {
 
     // ============= Load Custom stylesheets =============
 
-    wp_enqueue_style( 'maze-animate', get_template_directory_uri() . '/inc/assets/css/animate.css', array(), '1.1' );
-    wp_enqueue_style( 'maze-swiper', get_template_directory_uri() . '/inc/assets/css/swiper.min.css' );
+    wp_enqueue_style( 'animal-animate', get_template_directory_uri() . '/inc/assets/css/animate.css', array(), '1.1' );
+    wp_enqueue_style( 'animal-swiper', get_template_directory_uri() . '/inc/assets/css/swiper.min.css' );
     
     if (is_front_page()) {
-        // wp_enqueue_style( 'maze-animate_headlines', get_template_directory_uri() . '/inc/assets/css/animate_headlines.css' );
+        // wp_enqueue_style( 'animal-animate_headlines', get_template_directory_uri() . '/inc/assets/css/animate_headlines.css' );
     }
-    wp_enqueue_style( 'maze-custom_style', get_template_directory_uri() . '/inc/assets/css/custom_style.css', array(), '1.29' );
+    wp_enqueue_style( 'animal-custom_style', get_template_directory_uri() . '/inc/assets/css/custom_style.css', array(), '1.29' );
 
 
 
@@ -196,8 +196,8 @@ function wp_bootstrap_starter_scripts() {
 
     // ======================================================================== 
     // Add all custom js libraries here
-    wp_enqueue_script('maze-jquery.visible', get_template_directory_uri() . '/inc/assets/js/jquery.visible.js', array(), '', true );
-    wp_enqueue_script('maze-swiper', get_template_directory_uri() . '/inc/assets/js/swiper.min.js', array(), '1', true );
+    wp_enqueue_script('animal-jquery.visible', get_template_directory_uri() . '/inc/assets/js/jquery.visible.js', array(), '', true );
+    wp_enqueue_script('animal-swiper-js', get_template_directory_uri() . '/inc/assets/js/swiper.min.js', array(), '1', true );
     wp_enqueue_script('jquery-loader', get_template_directory_uri() . '/inc/assets/js/queryloader.min.js', array(), '', true );
     wp_enqueue_script('wp-bootstrap-starter-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.js', array(), '', true );
 	wp_enqueue_script( 'wp-bootstrap-starter-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true );

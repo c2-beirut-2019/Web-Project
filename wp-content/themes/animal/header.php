@@ -1,14 +1,6 @@
 <?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WP_Bootstrap_Starter
- */
 
+session_start();
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -19,7 +11,9 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
 </head>
-
+<?php  
+	// $_SESSION['access_token']= 'Bearer 56134c38a472cc22a92c60ae8ce971c84c443630';
+?>
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<?php  
@@ -51,11 +45,46 @@
 			<div class="col-10 text-right">
 				<ul class="d-inline-flex">
 					<li>
-						About Us
+						<a href="<?php echo get_page_link(17); ?>">
+							About Us
+						</a>
 					</li>
 					<li>
-						Contact Us
+						<a href="<?php echo get_page_link(15) ;?>">
+							Contact Us
+						</a>
 					</li>
+					<?php  
+						if($_SESSION['access_token'] !=''){
+							?>
+							<li>
+								<a href="<?php echo get_page_link(22) ;?>">
+									Dashboard
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo get_page_link(24) ;?>">
+									News
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo get_page_link(26) ;?>">
+									Products
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo get_page_link(28) ;?>">
+									Pets
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo get_page_link(30) ;?>">
+									Appointment
+								</a>
+							</li>
+							<?php
+						}
+					?>
 				</ul>
 				<a href="<?php echo get_page_link(13) ;?>">
 					<div class="btn_web">Login</div>

@@ -298,36 +298,6 @@ body.hide_scroll {
     display: table;
     text-align: center; }
 
-.ctc_us_page {
-  margin: 80px 0px; }
-  .ctc_us_page .contact_form {
-    max-width: 700px;
-    margin: 0 auto;
-    position: relative; }
-    .ctc_us_page .contact_form input {
-      border: 1px solid black;
-      margin: 0px;
-      padding: 12px 15px;
-      width: 100%;
-      margin-bottom: 30px;
-      font-size: 18px;
-      color: grey;
-      font-family: "helveticaneue-light"; }
-    .ctc_us_page .contact_form textarea {
-      border: 1px solid black;
-      width: 100%; }
-    .ctc_us_page .contact_form ::placeholder {
-      /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: grey;
-      opacity: 1;
-      /* Firefox */ }
-    .ctc_us_page .contact_form :-ms-input-placeholder {
-      /* Internet Explorer 10-11 */
-      color: grey; }
-    .ctc_us_page .contact_form ::-ms-input-placeholder {
-      /* Microsoft Edge */
-      color: grey; }
-
 .homepage .banner_section .backgroundimg {
   background-repeat: no-repeat;
   background-position: center;
@@ -359,28 +329,6 @@ body.hide_scroll {
     .homepage .banner_section .backgroundimg .table_cell .blue {
       color: #42a5f5; }
 
-.login .user_or_doctor {
-  width: 600px;
-  margin: 100px auto;
-  position: relative;
-  border: 1px solid #42a5f5;
-  border-radius: 50px;
-  padding: 40px 20px; }
-  .login .user_or_doctor .line {
-    width: 100%;
-    height: 1px;
-    background-color: #42a5f5; }
-  .login .user_or_doctor .access_code .web_subtitle {
-    border-bottom: 1px solid #42a5f5;
-    padding-left: 0px;
-    width: 100%; }
-  .login .user_or_doctor .sign_in {
-    font-size: 13px;
-    font-family: "helveticaneue";
-    font-style: italic; }
-    .login .user_or_doctor .sign_in a {
-      color: #42a5f5; }
-
 .btn_web {
   padding: 8px 30px;
   transition: .2s;
@@ -398,43 +346,19 @@ body.hide_scroll {
   background-color: #42a5f5;
   border: 1px solid white; }
 
-.home_body .petsadopt, .home_body .news_section, .home_body .appointment, .home_body .product {
+.home_body .petsadopt {
   padding: 80px 0px; }
-  .home_body .petsadopt .image_pets, .home_body .news_section .image_pets, .home_body .appointment .image_pets, .home_body .product .image_pets {
+  .home_body .petsadopt .image_pets {
     margin-bottom: 5px; }
-  .home_body .petsadopt .title, .home_body .news_section .title, .home_body .appointment .title, .home_body .product .title {
+  .home_body .petsadopt .title {
     font-family: "helveticaneue-bold";
     font-size: 25px;
     line-height: normal;
     margin-bottom: 5px; }
-  .home_body .petsadopt .short_name, .home_body .news_section .short_name, .home_body .appointment .short_name, .home_body .product .short_name {
+  .home_body .petsadopt .short_name {
     font-size: 15px;
     font-family: "helveticaneue-medium";
     color: #42a5f5; }
-.home_body .news_section {
-  background-color: #ece1e1; }
-  .home_body .news_section .image_news {
-    margin-bottom: 5px; }
-.home_body .appointment .backgroundimg {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: #4a3f46;
-  height: 650px;
-  position: relative;
-  display: table;
-  width: 100%;
-  background-blend-mode: overlay; }
-.home_body .appointment .left {
-  margin-left: 40px; }
-  .home_body .appointment .left .big_title {
-    font-size: 37px;
-    font-family: "helveticaneue-bold";
-    line-height: nomral; }
-  .home_body .appointment .left .text_app {
-    font-size: 19px;
-    line-height: nomral;
-    font-family: "helveticaneue"; }
 
 .web_title {
   font-size: 30px;
@@ -445,72 +369,6 @@ body.hide_scroll {
   font-size: 18px;
   line-height: normal;
   font-family: "helveticaneue"; }
-
-.app_btn {
-  border: 50px;
-  padding: 8px 30px;
-  text-align: center;
-  transition: .2s;
-  border: 1px solid #42a5f5;
-  background-color: white;
-  color: #42a5f5;
-  font-size: 18px;
-  line-height: normal;
-  font-family: "helveticaneue-bold";
-  border-radius: 50px;
-  display: inline-block;
-  position: relative; }
-
-.app_btn:hover {
-  border: 1px solid #42a5f5;
-  background-color: #42a5f5;
-  color: white; }
-
-.dashboard {
-  max-width: 800px;
-  margin: 80px auto;
-  position: relative;
-  border: 1px solid #42a5f5;
-  border-radius: 50px;
-  padding: 40px; }
-  .dashboard .backgroundimg {
-    height: 150px;
-    width: 150px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: white; }
-  .dashboard .title {
-    font-family: "helveticaneue-bold";
-    font-size: 19px; }
-  .dashboard .short_title {
-    font-family: "helveticaneue";
-    font-size: 19px;
-    color: #42a5f5;
-    margin-left: 20px; }
-
-.news_page, .product, .pets, .appointment {
-  padding: 80px 0px; }
-  .news_page .title, .product .title, .pets .title, .appointment .title {
-    font-family: "helveticaneue-bold";
-    font-size: 25px;
-    line-height: normal;
-    margin-bottom: 5px; }
-  .news_page .short_name, .product .short_name, .pets .short_name, .appointment .short_name {
-    font-size: 15px;
-    font-family: "helveticaneue-medium";
-    color: #42a5f5; }
-
-.aboutus {
-  padding: 80px 0px; }
-  .aboutus .bac_image {
-    height: 670px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: white;
-    display: block; }
 
 @media (min-width: 576px) {
   /* change this, by default 540px */
