@@ -12,21 +12,22 @@ get_header();
 						<div class="container">
 							<?php  
 								$id='';
-								$json = file_get_contents('http://34.247.71.103:4444/news?page=1&limit=6');
+								$json = file_get_contents('http://34.247.71.103:4444/news');
 								$news = json_decode($json);
+								$counter = count($news);
 								?>
 							<div class="row align-items-start">
 							<?php  
 								$i = 0;
-								for($i = 0; $i<=5; $i++) {	
-									$image = $news->data[$i]->image ;
-									$id = $news->data[$i]->_id ;
-									$title = $news->data[$i]->title ;
-									$content = $news->data[$i]->content ;
-									$creationDate = $news->data[$i]->creationDate ;
+								for($i = 0; $i<=$counter; $i++) {	
+									$image = $news[$i]->image ;
+									$id = $news[$i]->_id ;
+									$title = $news[$i]->title ;
+									$content = $news[$i]->content ;
+									$creationDate = $news[$i]->creationDate ;
 									?>
 									<div class="col-4">
-										<img class="img-fluid w-100 d-block image_news" src="<?php echo $image; ?>">
+										<div class="background_product mt-2 mb-2" style="background-image: url('<?php echo $image; ?>'); "></div>
 										<div class="title"><?php echo $title; ?></div>
 										<div class="short_name mb-5">
 											<?php echo wp_trim_words( $content, $num_words = 22, ' [..]' ) ?>

@@ -5,9 +5,6 @@
 	<div class="row">
 		<?php  
 			if(isset($_POST['user'])){
-				echo $_POST['user']; echo '<br><br>';
-				echo $_POST['pswd']; echo '<br><br>';
-				echo $_SESSION['access_token']; echo  '<br><br>';
 				$response = wp_remote_post( 'http://34.247.71.103:4444/client/authenticate	', array
 					(
 						'method' => 'POST',
@@ -26,18 +23,13 @@
 					echo 'error';
 				}else{
 					$dashboard= $response['body'];
+					print_r($dashboard);
 				  	$dash =json_decode( $dashboard, false );
-				  	print_r('<pre>');
-				  	print_r($dash);
-				  	print_r('</pre>');
 				  	$access_token= $dash->access_token;
 				    $_SESSION['access_token'] = $access_token;
 				}
 			}
 			if(isset($_POST['doctor_user'])){
-				echo $_POST['doctor_user']; echo '<br><br>';
-				echo $_POST['doctor_pswd']; echo '<br><br>';
-				echo $_SESSION['access_token']; echo  '<br><br>';
 				$response = wp_remote_post( 'http://34.247.71.103:4444/doctor/authenticate	', array
 					(
 						'method' => 'POST',

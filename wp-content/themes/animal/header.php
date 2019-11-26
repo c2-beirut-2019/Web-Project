@@ -1,7 +1,5 @@
-<?php
-
-session_start();
-?><!DOCTYPE html>
+<?php session_start(); ?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -16,7 +14,8 @@ session_start();
 ?>
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<?php  
+	<?php
+		global $array_of_user;
 		if(is_page(8)){
 		?>
 		<div id="homepage_loader">

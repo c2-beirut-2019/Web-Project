@@ -8,15 +8,29 @@
 				<div class="backgroundimg" style="background-image: url(<?php echo get_template_directory_uri()?>/inc/assets/images/pets.jpg);">
 					<div class="table_cell">
 						<div class="container">
-							<div class="title">
-								Animals
-							</div>
-							<div class="banner_subtitle">
-								“Until one has loved an animal, a part of one’s soul remains unawakened.”
-							</div>
-							<div class="banner_subtitle blue author mt-3">–Anatole France</div>
-							<div class="btn_web">
-								About Us
+							<div id="page-sub-header" class="d-inline-block" style="background-color: transparent;">
+								<div class="swiper_reveal skin_dark_color swiper_text_bar_wrapper">
+									<div class="swiper_reveal_inner white_bar_text">
+										<div class="title">Animals</div>
+									</div>
+								</div>
+								<div class="swiper_reveal skin_dark_color swiper_text_bar_wrapper">
+									<div class="swiper_reveal_inner white_bar_text">
+										<div class="banner_subtitle">
+											“Until one has loved an animal, a part of one’s soul remains unawakened.”
+										</div>
+									</div>
+								</div>
+								<div class="swiper_reveal skin_dark_color swiper_text_bar_wrapper">
+									<div class="swiper_reveal_inner white_bar_text">
+										<div class="banner_subtitle blue author mt-3">–Anatole France</div>
+									</div>
+								</div>
+								<div class="swiper_reveal skin_dark_color swiper_text_bar_wrapper">
+									<div class="swiper_reveal_inner white_bar_text">
+										<div class="btn_web">About Us</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -80,9 +94,9 @@
 								$content = $news->data[$i]->content ;
 								$creationDate = $news->data[$i]->creationDate ;
 								?>
-								<div class="col-4 text-center">
-									<img class="img-fluid w-100 d-block image_news" src="<?php echo $image; ?>">
-									<div class="title"><?php echo $title; ?></div>
+								<div class="col-4 text-left">
+									<div class="background_product" style="background-image: url('<?php echo $image; ?>'); "></div>
+									<div class="title mt-2 mb-2"><?php echo $title; ?></div>
 									<div class="short_name">
 										<?php echo wp_trim_words( $content, $num_words = 22, ' [..]' ) ?>
 									</div>
@@ -117,7 +131,8 @@
 									$quantityAvailable= $description[$i]->quantityAvailable;
 									?>
 									<div class="swiper-slide">
-										<img class="img-fluid w-100 d-block mb-2" src="<?php echo $images_1; ?>">
+										<div class="background_product" style="background-image: url('<?php echo $images_1; ?>'); "></div>
+										<!-- <img class="img-fluid w-100 d-block mb-2" src="<?php echo $images_1; ?>"> -->
 										<div class="title"><?php echo $title; ?></div>
 										<div class="short_name">
 											<?php echo wp_trim_words( $description, $num_words = 22, ' [..]' ) ?>
@@ -174,8 +189,21 @@
 						$('#homepage_loader').remove();
 					});
 				}, 500);
+				setTimeout(function(){
+					animateSwiperText("#page-sub-header", 100);
+				}, 500);	
 			}
 		});
+		function animateSwiperText(parentElement, waitingTime){
+		    var timer = waitingTime;
+		    var timeOut;
+		    var btn_timer;
+		    jQuery(parentElement).find('.swiper_text_bar_wrapper').each(function(index, el) {
+		        timeOut = setTimeout(function(){
+		            jQuery(el).addClass('is-active');
+		        }, timer += 300);
+		    });
+		}
 
 		var swiper = new Swiper('#swiper-product', {
 		    spaceBetween: 15,

@@ -10,6 +10,8 @@ get_header(); ?>
 				$specie_name=''; $specie='';
 				$json = file_get_contents('http://34.247.71.103:4444/pet/toAdopt?page=1&limit=3213');
 				$pets_to_adopt = json_decode($json);
+				$counter= $pets_to_adopt->totalCount;
+
 			?>
 			<div class="container">
 				<div class="web_title mb-3">Pets To Adopt</div>
@@ -19,7 +21,7 @@ get_header(); ?>
 				<div class="row align-items-start">
 				<?php  
 					$i = 0;
-					for($i = 0; $i<=2; $i++) {	
+					for($i = 0; $i<=$counter; $i++) {	
 						$image = $pets_to_adopt->data[$i]->image ;
 						$name  =  $pets_to_adopt->data[$i]->name ;
 						$specie_name= $pets_to_adopt->data[$i]->specie_name ;

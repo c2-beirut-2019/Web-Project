@@ -332,6 +332,7 @@ body.hide_scroll{
 			.table_cell{
 				display: table-cell;
 				vertical-align: middle;
+				width: auto;
 				.title{
 					font-family: $bold;
 					font-size: 50px;
@@ -414,7 +415,15 @@ body.hide_scroll{
 	border: 1px solid white;
 }
 
-
+.background_product{
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-color: #4a3f46;
+	height: 300px;
+	position: relative;
+	width: 100%;
+}
 .home_body{
 	.petsadopt, .news_section, .appointment, .product{
 		padding: 80px 0px; 
@@ -553,6 +562,76 @@ body.hide_scroll{
 		display: block;
 	}
 }
+
+.swiper_reveal.is-active .swiper_reveal_inner {
+	transform: translate3d(0px, 0px, 0px);
+	-webkit-transform: translate3d(0px, 0px, 0px);
+	-moz-transform: translate3d(0px, 0px, 0px);
+	opacity: 1;
+	left: 0;
+}
+.swiper_reveal_container {
+	transition: opacity 0.5s ease-out;
+	p{
+		margin-bottom: 0px;
+	}
+	img{
+		max-width: 33px;
+		margin-right: 6px;
+		position: relative;
+		top: 3px;
+	}
+}
+.swiper_reveal.skin_dark_color:after, .swiper_reveal.skin_dark_color.with-vline:before {
+	background-color: $sec_color;
+}
+.swiper_reveal.is-active:after {
+	bottom: 0;
+	left: 100%;
+	margin-right: 0;
+	right: 0px;
+}
+
+.swiper_reveal:after {
+	content: '';
+	background-color: $main_color;
+	position: absolute;
+	margin: 0;
+	bottom: 0;
+	left: 0;
+	right: 100%;
+	top: 0;
+	transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s, left 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.6s;
+}
+.swiper_reveal .swiper_reveal_inner {
+	display: block;
+	opacity: 0;
+	left: -10px;
+	transform: translate3d(-10px, 0px, 0px);
+	-webkit-transform: translate3d(-10px, 0px, 0px);
+	-moz-transform: translate3d(-10px, 0px, 0px);
+	transition: all 0.2s ease 0.8s;
+}
+.header.bcg-parallax .swiper_reveal_container {
+	font-size: 60px;
+	font-weight: 900;
+	margin-bottom: 25px;
+	transition: opacity 0.5s ease-out;
+	overflow: auto;
+}
+.header.bcg-parallax .swiper_reveal_container {
+	font-size: 60px;
+	font-weight: 900;
+	margin-bottom: 25px;
+	transition: opacity 0.5s ease-out;
+}
+.swiper_reveal {
+	display: block;
+	// float: left;
+	clear: both;
+	position: relative;
+}
+
 
 
 // =============================================================================================================================

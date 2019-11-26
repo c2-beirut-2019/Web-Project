@@ -19,12 +19,14 @@
 				</div>
 				<div class="col-6">
 					<div class="head">SIGN UP TO THE NEWSLETTER</div>
-					<div class="d-inline-flex">
-						<input class="email" type="email" name="email" placeholder="Enter Your Email">
-						<button type="submit" class="blue_btn">
-							Subscribe
-						</button>
-					</div>
+					<form action="" method="post">
+						<div class="d-inline-flex">
+							<input class="email" type="email" name="email" placeholder="Enter Your Email" required>
+							<button type="submit" class="blue_btn">
+								Subscribe
+							</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

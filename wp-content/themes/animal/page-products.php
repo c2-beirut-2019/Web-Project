@@ -22,9 +22,9 @@
 					$quantityAvailable= $description[$i]->quantityAvailable;
 					?>
 					<div class="col-4">
-						<img class="img-fluid w-100 d-block mb-2" src="<?php echo $images_1; ?>">
+						<div class="background_product mt-2 mb-2" style="background-image: url('<?php echo $images_1; ?>'); "></div>
 						<div class="title"><?php echo $title; ?></div>
-						<div class="short_name">
+						<div class="short_name mb-5">
 							<?php echo wp_trim_words( $description, $num_words = 22, ' [..]' ) ?>
 						</div>
 					</div>

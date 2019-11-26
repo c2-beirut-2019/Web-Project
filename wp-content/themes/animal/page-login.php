@@ -3,6 +3,12 @@
 	define('response', 'response');  
 	define('message', 'message');  
 	$true_false = true; 
+	$error = '';
+
+	// print_r('<pre>');
+	// print_r($array_of_user);
+	// print_r('</pre>');
+
 ?>
 <div class="login">
 <?php
@@ -30,6 +36,7 @@
 		    echo "Something went wrong: $error_message";
 		} else {	   
 		    $obj = $response[response][message];
+		   	$error = 'Wrong Access Code';
 		    if($obj=='OK'){
 		    	$_SESSION['access_code_user']=$_POST['access_code'];
 		    	$true_false=  false;
@@ -77,26 +84,30 @@
 		$usrname  = $_POST['user_usrname'];
 		$pswdname = $_POST['pswd_usrname'];
 		$acc_code = $_SESSION['access_code_user'];
-		$response = wp_remote_post( 'http://34.247.71.103:4444/client/username', array(
-		    'method'      => 'POST',
-		    'timeout'     => 45,
-		    'redirection' => 5,
-		    'httpversion' => '1.0',
-		    'blocking'    => true,
-		    'headers'     => array(),
-		    'body'        => array(
-		        'accessCode' => $acc_code,
-		        'username'   => $usrname,
-		        'password'   => $pswdname,
-		    ),
-		    'cookies'     => array()
-		    )
-		);
-		if ( is_wp_error( $response ) ) {
-		    $error_message = $response->get_error_message();
-		    echo "Something went wrong: $error_message";
-		} else {	   
-		   $_SESSION['user_and_pswd_done']= 'done';
+		if(in_array($usrname, $array_of_user)){
+			$error_message= "username already in used";
+		}else{
+			$response = wp_remote_post( 'http://34.247.71.103:4444/client/username', array(
+			    'method'      => 'POST',
+			    'timeout'     => 45,
+			    'redirection' => 5,
+			    'httpversion' => '1.0',
+			    'blocking'    => true,
+			    'headers'     => array(),
+			    'body'        => array(
+			        'accessCode' => $acc_code,
+			        'username'   => $usrname,
+			        'password'   => $pswdname,
+			    ),
+			    'cookies'     => array()
+			    )
+			);
+			if ( is_wp_error( $response ) ) {
+			    $error_message = $response->get_error_message();
+			    echo "Something went wrong: $error_message";
+			} else {	   
+			   $_SESSION['user_and_pswd_done']= 'done';
+			}
 		}
 	}
 	if(isset($_POST['user_usrname_doctor'])){
@@ -179,6 +190,13 @@
 									<div class="col-8">
 										<input type="text" name="access_code" class="web_subtitle" placeholder="Access Code" value="">
 									</div>
+									<div class="col-8">
+									<?php 
+										if($error !=''){
+											print_r($error);
+										}
+									?>
+									</div>
 									<div class="col-12 text-center">
 										<input type="submit" class="app_btn mt-5" value="Validate Code" />
 									</div>
@@ -239,7 +257,10 @@
 							<div class="content mt-5">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-8">
-										<input type="text" name="user_usrname" class="web_subtitle mb-4" placeholder="Username" value="">
+										<div class="mb-4">
+											<input type="text" name="user_usrname" class="web_subtitle mb-0" placeholder="Username" value="">
+											<?php echo $error_message; ?>
+										</div>
 									</div>
 									<div class="col-8">
 										<input type="text" name="pswd_usrname" class="web_subtitle" placeholder="Password" value="">
