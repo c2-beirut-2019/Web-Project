@@ -28,7 +28,9 @@
 								</div>
 								<div class="swiper_reveal skin_dark_color swiper_text_bar_wrapper">
 									<div class="swiper_reveal_inner white_bar_text">
-										<div class="btn_web">About Us</div>
+										<a href="<?php echo get_page_link(15) ;?>">
+											<div class="btn_web">Contact Us</div>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -47,7 +49,7 @@
 					?>
 					<div class="container">
 						<div class="web_title mb-3">Pets To Adopt</div>
-						<div class="web_subtitle mb-5" style="max-width: 500px;">
+						<div class="web_subtitle mb-3 mb-lg-5" style="max-width: 500px;">
 							It is my hope that this new print will give people a way to advocate for these animals and show their support for pet adoption.
 						</div>
 						<div class="row align-items-start">
@@ -59,16 +61,21 @@
 								$specie_name= $pets_to_adopt->data[$i]->specie_name ;
 	   							$specie= $pets_to_adopt->data[$i]->specie ;
 								?>
-								<div class="col-4 text-center">
-									<img class="img-fluid w-100 d-block image_pets" src="<?php echo $image; ?>">
+								<div class="col-md-4 col-sm-6 text-center">
+									<div class="background_product" style="background-image: url('<?php echo $image; ?>'); "></div>
 									<div class="title"><?php echo $name; ?></div>
-									<div class="short_name">
+									<div class="short_name mb-3 mb-md-0">
 										<?php echo $specie_name; ?>
 									</div>
 								</div>
 								<?php  
 							}
 						?>
+						</div>
+						<div class="text-center w-100">
+							<a href="<?php echo get_page_link(28); ?>">
+								<div class="blue_btn mt-2 mt-md-5"> See All Pets</div>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -81,7 +88,7 @@
 							
 						?>
 						<div class="web_title mb-3">Latest News</div>
-						<div class="web_subtitle mb-5" style="max-width: 500px;">
+						<div class="web_subtitle mb-3 mb-lg-5" style="max-width: 500px;">
 							News is something somebody doesn't want printed; all else is advertising.
 						</div>
 						<div class="row align-items-start">
@@ -94,10 +101,10 @@
 								$content = $news->data[$i]->content ;
 								$creationDate = $news->data[$i]->creationDate ;
 								?>
-								<div class="col-4 text-left">
+								<div class="col-md-4 col-sm-6 text-left">
 									<div class="background_product" style="background-image: url('<?php echo $image; ?>'); "></div>
 									<div class="title mt-2 mb-2"><?php echo $title; ?></div>
-									<div class="short_name">
+									<div class="short_name mb-3 mb-md-0">
 										<?php echo wp_trim_words( $content, $num_words = 22, ' [..]' ) ?>
 									</div>
 								</div>
@@ -105,18 +112,23 @@
 							}
 						?>
 						</div>
+						<div class="text-center w-100">
+							<a href="<?php echo get_page_link(24); ?>">
+								<div class="blue_btn mt-2 mt-md-5"> See All News</div>
+							</a>
+						</div>
 					</div>
 				</div>
 				<div class="product">
 					<div class="container">
-						<div class="web_title mb-5">Product</div>
+						<div class="web_title mb-3 mb-lg-5">Product</div>
 						<?php  
 							$id='';
 							$products = file_get_contents('http://34.247.71.103:4444/product');
 							$product = json_decode($products);
 							$total= count($product);
 						?>
-						<div class="swiper-container" id="swiper-product">
+						<div class="swiper-container" id="swiper-product" style="overflow: visible;">
 							<div class="swiper-wrapper">
 							<?php  
 								$i = 0;
@@ -142,26 +154,35 @@
 								}	
 							?>
 							</div>
+							<div class="swiper-pagination owl-pagination-carousel"></div>
+							<div class="swiper-scrollbar" style="opacity: 1;"></div>
+						</div>
+						<div class="text-left w-100">
+							<a href="<?php echo get_page_link(26); ?>">
+								<div class="blue_btn mt-4 mt-md-5"> See All Products</div>
+							</a>
 						</div>
 					</div>
 				</div>
-				<div class="appointment">
+				<div class="appointment" style="padding-top: 0px;">
 					<div class="container">
 						<div class="row align-items-center">
-							<div class="col-6">
-								<div class="backgroundimg" style="background-image: url(<?php echo get_template_directory_uri()?>/inc/assets/images/cat.jpg);"></div>
+							<div class="col-md-6">
+								<div class="backgroundimg mb-3 mb-md-0" style="background-image: url(<?php echo get_template_directory_uri()?>/inc/assets/images/cat.jpg);"></div>
 							</div>
-							<div class="col-6">
+							<div class="col-md-6">
 								<div class="left">
 									<div class="big_title mb-2">
 										Vaccination
 									</div>
-									<div class="text_app mb-5">
+									<div class="text_app mb-4 mb-xl-5">
 										Vaccination has long been an effective way to reduce disease burden in pets and farm animals, and is a key tool in maintaining animal health and welfare. Vaccines continue to play an increasingly vital role in preventative health and disease control programmes in animals. Innovative research and the development of safe, effective and quality vaccines means that our pets and farm animals continue to benefit from vital medicines that prevent or alleviate clinical signs of disease.
 									</div>
-									<div class="app_btn">
-										Appointment
-									</div>
+									<a href="<?php echo get_page_link(30); ?>">
+										<div class="app_btn">
+											Appointment
+										</div>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -208,6 +229,24 @@
 		var swiper = new Swiper('#swiper-product', {
 		    spaceBetween: 15,
 		    slidesPerView: 3,
+	   	  	scrollbar: {
+	   	        el: '.swiper-scrollbar',
+	   	        hide: false,
+   	        },
+   	        breakpoints: {
+   	        	0: {
+   	                slidesPerView: 1.7,
+   	                spaceBetween: 15, 
+   	            },
+   	        	575: {
+   	                slidesPerView: 2.1,
+   	                spaceBetween: 15, 
+   	            },
+   	        	991: {
+   	                slidesPerView: 2,
+   	                spaceBetween: 15, 
+   	            }
+   	        }
 		});
 	});
 </script>

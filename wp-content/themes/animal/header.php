@@ -33,7 +33,7 @@
 		}
 	?>
 	<header class="site-header">
-		<div class="row align-items-center justify-content-center">
+		<div class="row align-items-center">
 			<div class="col-2 text-left">
 				<a href="<?php echo get_home_url(); ?>">
 					<div class="logo">
@@ -41,13 +41,8 @@
 					</div>
 				</a>
 			</div>
-			<div class="col-10 text-right">
+			<div class="col-10 text-right d-none d-lg-block">
 				<ul class="d-inline-flex">
-					<li>
-						<a href="<?php echo get_page_link(17); ?>">
-							About Us
-						</a>
-					</li>
 					<li>
 						<a href="<?php echo get_page_link(15) ;?>">
 							Contact Us
@@ -85,10 +80,123 @@
 						}
 					?>
 				</ul>
-				<a href="<?php echo get_page_link(13) ;?>">
-					<div class="btn_web">Login</div>
-				</a>
+				<?php  
+					if($_SESSION['access_token'] !=''){
+						if(isset($_POST['submit'])){
+							$_SESSION['access_token'] = '';
+						}
+						?>
+						<form class="btn_web" action="" method="post">
+							<button type="submit" name="submit" class="border-0" style="background-color: transparent;">Logout</button>
+						</form>	
+						<?php  
+					}else{
+						?>
+						<a href="<?php echo get_page_link(13) ;?>">
+							<div class="btn_web">Login</div>
+						</a>
+						<?php
+					}	
+				?>
+			</div>
+			<div class="col-8 d-block d-lg-none">
+				<div class="position-relative" style="float: right;">
+					<?php  
+						if($_SESSION['access_token'] !=''){
+							if(isset($_POST['submit'])){
+								$_SESSION['access_token'] = '';
+							}
+							?>
+							<form class="btn_web" action="" method="post">
+								<button type="submit" name="submit" class="border-0" style="background-color: transparent;">Logout</button>
+							</form>	
+							<?php  
+						}else{
+							?>
+							<a href="<?php echo get_page_link(13) ;?>">
+								<div class="btn_web">Login</div>
+							</a>
+							<?php
+						}	
+					?>
+				</div>
+			</div>
+			<div class="col-2 d-block d-lg-none">
+				<button class="hamburger hamburger--spring d-block d-lg-none" type="button">
+				    <span class="hamburger-box">
+					   	 <span class="hamburger-inner"></span>
+				    </span>
+				</button>
 			</div>
 		</div>
 	</header>
+	<div class="header_on_mobile">
+		<div class="ipad_size">
+			<div class="container">
+				<ul>
+							<li>
+								<a href="<?php echo get_page_link(15) ;?>">
+									Contact Us
+								</a>
+							</li>
+					<?php  
+						if($_SESSION['access_token'] !=''){
+							?>
+							<li>
+								<a href="<?php echo get_page_link(22) ;?>">
+									Dashboard
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo get_page_link(24) ;?>">
+									News
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo get_page_link(26) ;?>">
+									Products
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo get_page_link(28) ;?>">
+									Pets
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo get_page_link(30) ;?>">
+									Appointment
+								</a>
+							</li>
+							<?php
+						}
+					?>
+				</ul>
+				<div class="underline"></div>
+				<div class="socialmedia_icon">
+					<a href="https://www.facebook.com/">
+					  <i class="fab facebook fa-facebook-f"></i>
+					</a>
+					<a href="https://www.instagram.com/">
+					 <i class="fab instagram fa-instagram"></i>
+					</a>
+					<a href="https://www.linkedin.com/in/">
+					 <i class="fab linkedin fa-linkedin-in"></i> 
+					</a>
+					<a href="https://twitter.com/">
+					 <i class="fab twitter fa-twitter"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+			jQuery(document).ready(function($) {
+				$('.hamburger').click(function(event) {
+					$(this).toggleClass('is-active');
+					$('.site-header').toggleClass('is-active');
+					$('.header_on_mobile').toggleClass('active');
+					$('.site-main').toggleClass('active');
+				});
+			});
+		</script>
 	<div id="content" class="site-content">

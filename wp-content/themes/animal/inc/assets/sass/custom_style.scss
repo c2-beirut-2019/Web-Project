@@ -157,7 +157,7 @@ body.hide_scroll{
 //loader
 #homepage_loader{
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	background-color: #060e9f;
 	background-blend-mode: darken;
 	background-position: center;
@@ -264,7 +264,7 @@ body.hide_scroll{
 	    border: 1px solid white;
 	    padding-left: 20px;
 	}
-	.blue_btn{
+	.blue_btnn{
 		width: 155px;
 	    height: 47px;
 	    padding: 11px 0px;
@@ -284,11 +284,26 @@ body.hide_scroll{
 
 .ctc_us_page{
 	margin: 80px 0px;
+	.blue_btn{
+		color: white!important;
+	}
+	.blue_btn:hover{
+		color: $main_color!important;
+	}
 	.contact_form{
 		max-width: 700px;
 		margin: 0 auto;
 		position: relative;
-		input{
+		.field{
+			height: 85px;
+			input{
+				margin-bottom: 0px!important;
+			}
+			span.wpcf7-not-valid-tip{
+				font-size: 11px;
+			}
+		}
+		input, select{
 			border: 1px solid black;
 			margin: 0px;
 			padding: 12px 15px;
@@ -324,7 +339,7 @@ body.hide_scroll{
 			background-position: center;
 			background-size: cover;
 			background-color: #4a3f46;
-			height: 450px;
+			height: 600px;
 			position: relative;
 			display: table;
 			width: 100%;
@@ -415,6 +430,148 @@ body.hide_scroll{
 	border: 1px solid white;
 }
 
+.header_on_mobile{
+	position: fixed;
+	z-index: 10px;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	z-index: 10;
+	background-color: $main_color;
+	transform: translateY(-100%);
+	padding: 15px;
+	padding-top: 30px;
+	transition: .3s;
+	ul{
+		position: relative;
+		display: block;
+		li{
+			font-size: 27px;
+			font-family: $regular;
+			line-height: normal;
+			padding-bottom: 23px;
+			color: white;
+		}
+	}
+	.underline{
+		width: 100%;
+		border: solid 2px white;
+	}
+	.socialmedia_icon{
+		margin-top: 20px;
+		i{
+			color: white;
+			padding-right: 10px;
+			font-size: 20px;
+		}
+	}
+}
+.header_on_mobile.active{
+	position: fixed;
+	top: 77px;
+	transform: translateY(0%);
+}
+.site-header.is-active{
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+	z-index: 222222;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+.site-header{
+	position: relative;
+	display: block;
+	z-index: 2222;
+	// background-color: white;
+}
+header{
+	.hamburger{
+		float: right;
+		padding: 0px;
+		position: relative;
+		top: 3px;
+	}
+	.nav-link {
+	    padding: 0px;
+	}
+	.dropdown-toggle::after{
+		position: relative;
+		top: 3px;
+	}
+	.content{
+		background-color: $main_color;
+		padding: 5px 0px;
+		.text{
+			color: #ffffff;
+			font-family: $light;
+			font-size: 15px;
+		}
+		i.fa-envelope{
+			color: rgba(255, 255, 255, 0.6);
+			font-size: 20px;
+			position: relative;
+			top: 2px;
+			margin-right: 10px;
+		}
+		.bar{
+			padding: 0px 20px;
+		}
+		.socialmedia_icon{
+			position: relative;
+			float: right;
+			.facebook, .twitter, .instagram, .linkedin{
+				color: #ffffff;
+				padding-left: 10px;
+				transition: .2s;
+			}
+			.facebook:hover{
+				color: $sec_color;
+			}
+			.twitter:hover{
+				color: #38A1F3;
+			}
+			.instagram:hover{
+				color: rgba(228,64,95,1);
+			}
+			.linkedin:hover{
+				color: #0077B5;
+			}
+		}
+	}
+	.header_bar.active{
+	    padding-bottom: 30px;
+	    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+	}
+	.header_bar{
+		padding-top: 44px;
+		.logo{
+			width: 394px;
+			height: 88px;
+		}
+		.logo_internal{
+		    width: 344px;
+		    height: 88px;
+		}
+		li{
+			color: #254a7a;
+			font-family: $regular;
+			font-size: 21px;
+			padding-left: 36px;
+			position: relative;
+			select{
+				padding: 0px;
+				margin: 0px;
+			}
+			i{
+				position: absolute;
+			    top: 13px;
+			    font-size: 15px;
+			    right: -20px;
+			}
+		}
+	}
+}	
+
 .background_product{
 	background-repeat: no-repeat;
 	background-position: center;
@@ -469,13 +626,21 @@ body.hide_scroll{
 			}
 			.text_app{
 				font-size: 19px;
-				line-height: nomral;
+				line-height: normal;
 				font-family: $regular;
 			}
 		}
 	}
 }
 
+.div.wpcf7-response-output, div.wpcf7-mail-sent-ok{
+	display: none!important;
+}
+
+
+.bluee{
+	color: $main_color;
+}
 
 .web_title{
 	font-size: 30px;
@@ -508,6 +673,35 @@ body.hide_scroll{
 	background-color: $main_color;
 	color: white;
 }
+
+.product{
+	.short_name{
+		margin-bottom: 60px;
+	}
+}
+
+.blue_btn{
+	border: 50px;
+	padding: 8px 30px;
+	text-align: center;
+	transition: .2s;
+	border: 1px solid transparent;
+	background-color: $main_color;
+	color: white;
+	font-size: 18px;
+	line-height: normal;
+	font-family: $bold;
+	border-radius: 50px;
+	display: inline-block;
+	position: relative;
+}
+.blue_btn:hover{
+	border: 1px solid $main_color;
+	background-color: white;
+	color: $main_color;
+}
+
+
 
 .dashboard{
 	max-width: 800px;
@@ -632,13 +826,17 @@ body.hide_scroll{
 	position: relative;
 }
 
-
+.site-page{
+	overflow: hidden;
+}
 
 // =============================================================================================================================
 // =============================================================================================================================
 // start of breakpoints 
 @media (max-width: 1399px){
-
+	.homepage .banner_section .backgroundimg{
+		height: 500px;
+	}
 }
 
 
@@ -648,7 +846,27 @@ body.hide_scroll{
 
 
 @media (max-width: 1199px){
-
+	.homepage .banner_section .backgroundimg .table_cell .title{
+		font-size: 40px;
+		margin-bottom: 20px;
+	}
+	.homepage .banner_section .backgroundimg .table_cell .banner_subtitle {
+	    font-size: 27px;
+	    max-width: 560px;
+	}
+	.homepage .banner_section .backgroundimg .table_cell .author{
+		margin-bottom: 30px;
+	}
+	.background_product{
+		height: 220px;
+	}
+	.home_body .appointment .backgroundimg{
+		height: 450px;
+	}
+	.home_body .appointment .left .text_app{
+		font-size: 16px;
+		line-height: 22px;
+	}
 }
 
 
@@ -657,7 +875,45 @@ body.hide_scroll{
 
 
 @media (max-width: 991px){
-
+	.site-footer .email{
+		width: 220px;
+	}
+	.homepage .banner_section .backgroundimg{
+		height: 350px;
+	}
+	.home_body .petsadopt, .home_body .news_section, .home_body .appointment, .home_body .product{
+		padding: 60px 0px;
+	}
+	.web_subtitle{
+		font-size: 16px;
+	}
+	.home_body .appointment .backgroundimg{
+		height: 350px;
+	}
+	.home_body .appointment .left{
+		margin-left: 0px;
+	}
+	.home_body .appointment .left .big_title{
+		font-size: 29px;
+	}
+	.home_body .appointment .left .text_app{
+		font-size: 14px;
+	}
+	.app_btn, .blue_btn{
+		font-size: 15px;
+	}
+	.home_body .petsadopt .title, .home_body .news_section .title, .home_body .appointment .title, .home_body .product .title{
+		font-size: 19px;
+	}
+	.dashboard{
+		margin: 60px;
+	}
+	.news_page, .product, .pets, .appointment{
+		padding: 60px 0px;
+	}
+	.login .user_or_doctor{
+		width: 100%;
+	}
 }
 
 
@@ -665,7 +921,28 @@ body.hide_scroll{
 
 
 @media (max-width: 767px){
-
+	.site-header .logo, .site-footer .logo{
+	    width: 40px;
+	    height: 40px;
+	}
+	.homepage .banner_section .backgroundimg .table_cell .title{
+		font-size: 30px;
+	}
+	.homepage .banner_section .backgroundimg .table_cell .banner_subtitle{
+		font-size: 23px;
+	}
+	.header_on_mobile.active{
+		top: 67px;
+	}
+	.header_on_mobile ul li{
+		font-size: 20px;
+	}
+	.web_title{
+		font-size: 19px;
+	}
+	.login .user_or_doctor{
+		margin: 50px 0px;
+	}
 }
 
 
@@ -674,7 +951,53 @@ body.hide_scroll{
 
 
 @media (max-width: 575px){
-
+	.site-footer .email{
+	    width: 180px;
+	}
+	.site-footer .blue_btnn{
+		width: 100px;
+	}
+	.site-footer .blue_btnn{
+		font-size: 11px;
+	}
+	.site-footer .head{
+		margin-top: 20px;
+		font-size: 16px;
+	}
+	.site-footer .email, .site-footer .blue_btnn{
+		height: 40px;
+	}
+	.site-footer .blue_btnn{
+		padding: 8px 0px;
+	}
+	.site-footer{
+	    padding: 30px 0px;
+	}
+	.wpbdmv-animation{
+		max-width: 130px!important;
+	}
+	.dashboard{
+		margin: 20px;
+		padding: 15px 10px;
+	}
+	.dashboard .title, .dashboard .short_title{
+		font-size: 16px;
+	}
+	.dashboard .backgroundimg{
+		width: 80px;
+		height: 80px;
+		position: relative;
+		margin-bottom: 15px;
+	}
+	.news_page .title, .product .title, .pets .title, .appointment .title{
+		font-size: 19px;
+	}
+	.news_page .short_name, .product .short_name, .pets .short_name, .appointment .short_name{
+		font-size: 13px;
+	}
+	.news_page, .product, .pets, .appointment{
+		padding: 40px 0px;
+	}
 }
 
 

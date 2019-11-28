@@ -176,6 +176,7 @@ function wp_bootstrap_starter_scripts() {
 
     wp_enqueue_style( 'animal-animate', get_template_directory_uri() . '/inc/assets/css/animate.css', array(), '1.1' );
     wp_enqueue_style( 'animal-swiper', get_template_directory_uri() . '/inc/assets/css/swiper.min.css' );
+    wp_enqueue_style( 'animal-menu', get_template_directory_uri() . '/inc/assets/css/hamburgers.css' );
     
     if (is_front_page()) {
         // wp_enqueue_style( 'animal-animate_headlines', get_template_directory_uri() . '/inc/assets/css/animate_headlines.css' );

@@ -8,6 +8,7 @@ get_header();
 		<div class="col-12">
 			<div class="news_page">
 				<div class="container">
+					<div class="web_title text-center mb-2 mt-3 mb-md-5">News</div>
 					<div class="news_section">
 						<div class="container">
 							<?php  
@@ -26,10 +27,10 @@ get_header();
 									$content = $news[$i]->content ;
 									$creationDate = $news[$i]->creationDate ;
 									?>
-									<div class="col-4">
+									<div class=" col-sm-6 col-md-4">
 										<div class="background_product mt-2 mb-2" style="background-image: url('<?php echo $image; ?>'); "></div>
 										<div class="title"><?php echo $title; ?></div>
-										<div class="short_name mb-5">
+										<div class="short_name mb-3 mb-md-5">
 											<?php echo wp_trim_words( $content, $num_words = 22, ' [..]' ) ?>
 										</div>
 									</div>	

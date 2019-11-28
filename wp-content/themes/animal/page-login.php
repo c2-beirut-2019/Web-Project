@@ -151,7 +151,7 @@
 							<div class="col-3"><div class="line"></div></div>
 						</div>
 						<form action="" method="post">
-							<div class="content mt-5">
+							<div class="content mt-3 mt-md-5">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-5 text-center">
 										<div class="custom-control custom-radio">
@@ -166,7 +166,7 @@
 										</div>
 									</div>
 									<div class="col-12 text-center">
-										<input type="submit" class="app_btn mt-5" value="Continue" />
+										<input type="submit" class="app_btn mt-3 mt-md-5" value="Continue" />
 									</div>
 								</div>
 							</div>
@@ -185,7 +185,7 @@
 							<div class="col-3"><div class="line"></div></div>
 						</div>
 						<form action="" method="post">
-							<div class="content mt-5">
+							<div class="content mt-3 mt-md-5">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-8">
 										<input type="text" name="access_code" class="web_subtitle" placeholder="Access Code" value="">
@@ -198,7 +198,7 @@
 									?>
 									</div>
 									<div class="col-12 text-center">
-										<input type="submit" class="app_btn mt-5" value="Validate Code" />
+										<input type="submit" class="app_btn mt-3 mt-md-5" value="Validate Code" />
 									</div>
 								</div>
 							</div>
@@ -223,13 +223,13 @@
 							<div class="col-3"><div class="line"></div></div>
 						</div>
 						<form action="" method="post">
-							<div class="content mt-5">
+							<div class="content mt-3 mt-md-5">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-8">
 										<input type="text" name="access_code_docter" class="web_subtitle" placeholder="Access Code" value="">
 									</div>
 									<div class="col-12 text-center">
-										<input type="submit" class="app_btn mt-5" value="Validate Code" />
+										<input type="submit" class="app_btn mt-3 mt-md-5" value="Validate Code" />
 									</div>
 								</div>
 							</div>
@@ -254,7 +254,7 @@
 							<div class="col-3"><div class="line"></div></div>
 						</div>
 						<form action="" method="post">
-							<div class="content mt-5">
+							<div class="content mt-3 mt-md-5">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-8">
 										<div class="mb-4">
@@ -266,7 +266,7 @@
 										<input type="text" name="pswd_usrname" class="web_subtitle" placeholder="Password" value="">
 									</div>
 									<div class="col-12 text-center">
-										<input type="submit" class="app_btn mt-5" value="Create Account" />
+										<input type="submit" class="app_btn mt-3 mt-md-5" value="Create Account" />
 									</div>
 								</div>
 							</div>
@@ -285,7 +285,7 @@
 							<div class="col-3"><div class="line"></div></div>
 						</div>
 						<form action="" method="post">
-							<div class="content mt-5">
+							<div class="content mt-3 mt-md-5">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-8">
 										<input type="text" name="user_usrname_doctor" class="web_subtitle mb-4" placeholder="Username" value="">
@@ -294,7 +294,7 @@
 										<input type="text" name="pswd_usrname_doctor" class="web_subtitle" placeholder="Password" value="">
 									</div>
 									<div class="col-12 text-center">
-										<input type="submit" class="app_btn mt-5" value="Create Account" />
+										<input type="submit" class="app_btn mt-3 mt-md-5" value="Create Account" />
 									</div>
 								</div>
 							</div>
@@ -313,7 +313,7 @@
 							<div class="col-3"><div class="line"></div></div>
 						</div>
 						<form action="" method="post">
-							<div class="content mt-5">
+							<div class="content mt-3 mt-md-5">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-8">
 										<div class="web_subtitle border-0" style="color: red;">
@@ -325,7 +325,7 @@
 									</div>
 									<div class="col-12 text-center">
 										<a href="<?php echo get_page_link(20); ?>">
-											<div class="app_btn mt-5">
+											<div class="app_btn mt-3 mt-md-5">
 												Sign In Now
 											</div>
 										</a>

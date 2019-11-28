@@ -27,10 +27,10 @@ get_header(); ?>
 						$specie_name= $pets_to_adopt->data[$i]->specie_name ;
 							$specie= $pets_to_adopt->data[$i]->specie ;
 						?>
-						<div class="col-4 text-center">
+						<div class="col-sm-6 col-md-4 text-center">
 							<img class="img-fluid w-100 d-block image_pets" src="<?php echo $image; ?>">
 							<div class="title"><?php echo $name; ?></div>
-							<div class="short_name">
+							<div class="short_name mb-2 mb-md-5">
 								<?php echo $specie_name; ?>
 							</div>
 						</div>
